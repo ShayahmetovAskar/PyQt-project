@@ -1,0 +1,57 @@
+from src.styles import Styles
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(522, 44)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.pushButtonGoBack = QtWidgets.QPushButton(Form)
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonGoBack.setFont(font)
+        self.pushButtonGoBack.setStyleSheet(Styles.style_nice_button)
+        self.pushButtonGoBack.setObjectName("pushButton_3")
+        self.pushButtonGoBack.setIcon(QtGui.QIcon('src/icons/icon_back.png'))
+        self.horizontalLayout.addWidget(self.pushButtonGoBack)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.pushButtonImport = QtWidgets.QPushButton(Form)
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.pushButtonImport.setFont(font)
+        self.pushButtonImport.setStyleSheet(Styles.style_nice_button)
+        self.pushButtonImport.setIcon(QtGui.QIcon('src/icons/icon_import.png'))
+        self.pushButtonImport.setObjectName("pushButton_2")
+        self.horizontalLayout.addWidget(self.pushButtonImport)
+        self.pushButtonExport = QtWidgets.QPushButton(Form)
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButtonExport.setFont(font)
+        self.pushButtonExport.setStyleSheet(Styles.style_nice_button)
+        self.pushButtonExport.setObjectName("pushButton")
+        self.pushButtonExport.setIcon(QtGui.QIcon('src/icons/icon_export.png'))
+        self.horizontalLayout.addWidget(self.pushButtonExport)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.pushButtonGoBack.setText(_translate("Form", "Назад"))
+        self.pushButtonImport.setText(_translate("Form", "Открыть"))
+        self.pushButtonExport.setText(_translate("Form", "Сохранить"))
